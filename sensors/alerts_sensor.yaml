@@ -1,6 +1,7 @@
 class_name: "PrometheusAlertsSensor"
 entry_point: "prometheus_sensor.py"
 description: "A StackStorm sensor for fetching alerts from Prometheus."
+poll_interval: 30s
 enabled: true
 trigger_types:
   - name: "prometheus.alert"
