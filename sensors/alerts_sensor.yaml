@@ -1,0 +1,26 @@
+class_name: "PrometheusAlertsSensor"
+entry_point: "prometheus_sensor.py"
+description: "A StackStorm sensor for fetching alerts from Prometheus."
+enabled: true
+trigger_types:
+  - name: "prometheus.alert"
+    description: "Triggered when a firing alert is received from Prometheus."
+    payload_schema:
+      type: "object"
+      properties:
+        alertname:
+          type: "string"
+          description: "The name of the alert."
+        severity:
+          type: "string"
+          description: "The severity of the alert."
+        description:
+          type: "string"
+          description: "The description of the alert."
+        value:
+          type: "string"
+          description: "The value of the alert."
+        instance:
+          type: "string"
+          description: "The instance associated with the alert."
+          # Add more properties as needed
